@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-import logo from './logo.svg';
 import './App.css';
 
-import axios from "axios";
-
-import ContactList from "./ContactList";
+import axios from 'axios';
 import Login from "./Login";
+
+import DoctorDashboard from './doctor-components/DoctorDashboard';
+import UserDashboard from './user-components/UserDashboard';
 
 class App extends Component {
   
@@ -43,9 +43,25 @@ class App extends Component {
   
   render() {
     return (
+      <Router>
       <div className="App">
         <Login/>
       </div>
+        <div>
+          <ul>
+            <li>
+              <Link to="/user-dashboard">UserDashboard</Link>
+            </li>
+            <li>
+              <Link to="/doctor-dashboard">DoctorDashboard</Link>
+            </li>
+          </ul>
+          <hr/>
+  
+          <Route path="/user-dashboard" component={UserDashboard} />
+          <Route path="/doctor-dashboard" component={DoctorDashboard} />
+        </div>
+      </Router>
     );
   }
 }
