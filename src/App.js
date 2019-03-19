@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+
 import logo from './logo.svg';
 import './App.css';
 
 import axios from "axios";
 
 import ContactList from "./ContactList";
+import Login from "./Login";
 
 class App extends Component {
   
@@ -40,12 +44,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Contact Manager</h1>
-        </header>
-
-        <ContactList contacts={this.state.contacts} />
+        <Login/>
       </div>
     );
   }
