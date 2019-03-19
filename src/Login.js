@@ -15,7 +15,7 @@ constructor(props){
  }
 render() {
     return (
-      <div>
+      <div className="App">
         <MuiThemeProvider>
           <div>
           <AppBar

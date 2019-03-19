@@ -44,20 +44,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-        <Login/>
-      </div>
         <div>
-          <ul>
-            <li>
-              <Link to="/user-dashboard">UserDashboard</Link>
-            </li>
-            <li>
-              <Link to="/doctor-dashboard">DoctorDashboard</Link>
-            </li>
-          </ul>
-          <hr/>
-  
+          <Route exact path="/" component={Login} />
           <Route path="/user-dashboard" component={UserDashboard} />
           <Route path="/doctor-dashboard" component={DoctorDashboard} />
         </div>
